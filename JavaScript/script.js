@@ -1,22 +1,24 @@
-function showUserName(userName={}){
-    window.alert(userName.twitter)
-}
-let socialMidea = {
-    facebook:"rocketseat",
-    instagran:"progama_ai",
-    youtube: "planetanovo",
-    twitter: "cursosemvideo"
-}
-function ChangeUserName(newName='root'){
-    userName.textContent = newName
-}
+let handeleChangeUserLinks = {
 
+    userMidea: {
+        youtube: 'travisscott',
+        twitter: 'cactusJack',
+        facebook: 'traviscott',
+        instagram: 'traviscott'
+    },
 
-function changeSocialMediaLinks(){
-    for( li of socialLinks.children){
-        const social =  li.getAttribute('class')
+    changeLinks(social){
+        this.userMidea
+        return(`https://${social}.com/${this.userMidea[social]}`)
+        
+    },
 
-        li.children[0].href = `https://${social}.com/${socialMidea[social]}`
+    execute(){
+        for(li of socialLinks.children){
+            let social = li.getAttribute('class')
+            li.children[0].href = this.changeLinks(social)
+            
+        }
     }
 }
-changeSocialMediaLinks()
+handeleChangeUserLinks.execute()
